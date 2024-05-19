@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: backend2-ingress
+  labels:
+    app: backend2
+  namespace: "{{ .Values.namespace }}"
+spec:
+  rules:
+    {{- range .Values.hosts }}
+    - host: {{ . }}
+      http:
+        paths:
+        - path: /backend2
+          pathType: Prefix
+          backend:
+            service:
+              name: backend2-api-service
+              port:
+                number: 80
+    {{- end }}
