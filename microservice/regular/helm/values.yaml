@@ -9,10 +9,10 @@ hosts:
   - sukruthgrandhi.com
 
 image:
-  repository: localhost:32000/backend2
+  repository: sukruthgrandhiofficial/backend2
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "latest"
+  tag: "1.0.1"
 
 envVariables:
   - name: DB_USER
@@ -20,7 +20,7 @@ envVariables:
   - name: DB_PASSWORD
     value: nitest
   - name: DB_HOST
-    value: dashboard-nib6-uat.ni.systems
+    value: 4.227.160.185
   - name: DB_PORT
     value: "3306"
   - name: DB_NAME
@@ -29,5 +29,3 @@ envVariables:
     value: 387613b80adfa6e333d9ffbaeb5dcfc4
   - name: algorithm
     value: HS256
-  - name: BACKEND2_URL
-    value: http://localhost:8000
